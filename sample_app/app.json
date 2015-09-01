@@ -1,0 +1,180 @@
+{
+    "properties": {
+        "description": "",
+        "modifiedAt": 1401261161091,
+        "createdBy": "dpa",
+        "thumbnailFile": "",
+        "templateFile": "swipe.zip",
+        "title": "Swipe Sample",
+        "modifiedBy": "dpa",
+        "optimized": true,
+        "createdAt": 1401260929930,
+        "editorState": "PUBLISHED",
+        "templateId": "14641A7912020C8",
+        "id": "swipe"
+    },
+    "load": {
+        "bundleLocations": [
+            "bundles"
+        ],
+        "allowedBundles": [
+            "windowmanager",
+            "map",
+            "splashscreen",
+            "dataform",
+            "basemaptoggler",
+            "layerswipe",
+            "system",
+            "templatelayout",
+            "templates",
+            "themes",
+            "toolset",
+            "toolrules"
+        ]
+    },
+    "bundles": {
+        "toolrules": {
+            "ToolActiveStateManager": {
+                "activateOnStartToolIds": [
+                    "swipeTool"
+                ]
+            }
+        },
+        "templates": {
+            "enabled": true,
+            "TemplateSelector": {
+                "componentEnabled": false
+            }
+        },
+        "layerswipe": {
+            "SwipeController": {
+                "swipeLayerWidgetOpts": {
+                    "type": "vertical"
+                }
+            },
+            "enabled": true
+        },
+        "basemaptoggler": {
+            "enabled": true,
+            "DropDownBasemapToggler": {
+                "showLabel": true
+            }
+        },
+        "toolset": {
+         "ToolsetManager": {
+            "toolsets": [
+               {
+                  "id": "default_tools",
+                  "title": "Tools",
+                  "tools": [
+                     "swipeTool"
+                  ],
+                  "container": "map",
+                  "position": {
+                     "rel_t": 50,
+                     "rel_l": 50
+                  }
+               }
+            ]
+         }
+      },
+        "dataform": {
+            "enabled": true
+        },
+        "themes": {
+            "ThemeSelector": {
+                "componentEnabled": false
+            },
+            "enabled": true,
+            "ThemeModel": {
+                "_selectedTheme": "everlasting",
+                "_themes": [
+                    {
+                        "name": "everlasting",
+                        "title": "Everlasting"
+                    }
+                ]
+            }
+        },
+        "wizard": {
+            "enabled": true
+        },
+        "templatelayout": {
+            "enabled": true
+        },
+        "map": {
+            "MappingResourceRegistryFactory": {
+                "_knownServices": {
+                    "services": [
+                        {
+                            "id": "worldimage",
+                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+                            "type": "AGS_TILED"
+                        },
+                        {
+                            "id": "worldtopo",
+                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+                            "type": "AGS_TILED"
+                        },
+                        {
+                            "id": "worldstreets",
+                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+                            "type": "AGS_TILED"
+                        }
+                    ]
+                }
+            },
+            "enabled": true,
+            "MapState": {
+                "initialExtent": {
+                    "xmin": 835578.8249383433,
+                    "xmax": 863096.1551209696,
+                    "ymin": 6785983.136606157,
+                    "ymax": 6800334.188666679,
+                    "wkid": 3857
+                }
+            },
+            "MapModelFactory": {
+                "_configData": {
+                    "maps": [
+                        {
+                            "id": "default",
+                            "glass_pane": [],
+                            "operationalLayer": [
+                                {
+                                    "id": "swipeLayer",
+                                    "enabled": true,
+                                    "service": "worldimage"
+                                }
+                            ],
+                            "baseLayer": [
+                                {
+                                    "title": "World Streets",
+                                    "enabled": true,
+                                    "service": "worldstreets",
+                                    "layers": [
+                                        "*"
+                                    ]
+                                },
+                                {
+                                    "title": "World Topo",
+                                    "enabled": false,
+                                    "service": "worldtopo",
+                                    "layers": [
+                                        "*"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "windowmanager": {
+            "enabled": true
+        },
+        "splashscreen": {
+            "enabled": true
+        }
+    }
+}

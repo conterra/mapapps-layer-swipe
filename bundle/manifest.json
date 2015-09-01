@@ -1,0 +1,92 @@
+// main bundle definition file
+{
+    // internal name of the bundle
+    "Bundle-SymbolicName": "layerswipe",
+    // version of this bundle
+    "Bundle-Version": "1.0",
+    // "human-readable" name of the bundle
+    "Bundle-Name": "${bundleName}",
+    // description of the bundle
+    "Bundle-Description": "${bundleDescription}",
+    // vendor information for this bundle
+    "Bundle-Vendor": "con terra GmbH",
+    // disable loading of main.js file (only required if i18n is used)
+    "Bundle-Main": "",
+    // define bundle dependencies, here: map bundle, version 3.0.0 and above
+    "Require-Bundle": [{
+        "name": "map",
+        "version": "[3.0.0,)"
+    }],
+
+    // Announce the config bundle
+    "Config-Bundle-Location": "/config",
+    
+     "CSS-Themes-Extension": [{
+        "name": "*",
+        "files": ["./themes/winter/layerSwipe.css"]
+    }],
+    
+    // list of components provided by this bundle
+    "Components": [{
+        // name of the swipe controller component
+        "name": "SwipeController",
+        // the provides statement registers this component in order to be linked to other components by a unique identifier (here bundle name + "." + component name)
+        "provides" : ["layerswipe.SwipeController"],
+        // configuration properties, accessible via this._properties in
+        // implementing class
+        "properties" : {
+            // some service node id from the map model
+            "mapModelNodeId" : "swipeLayer",
+            // options of the Esri Layer Swipe widget
+            "swipeLayerWidgetOpts" : {
+                "type" : "vertical"
+            }
+        },
+        // references to other required resources
+        "references": [{
+            // Bundle: map, Component: MapModel
+            // internal name
+            "name": "_mapModel",
+            // providing interface to identify service
+            "providing": "ct.mapping.map.MapModel"
+          }, {
+            // Bundle: map, Component: EsriMap
+            // internal name
+            "name": "_esriMap",
+            // providing interface to identify service
+            "providing": "esri.Map"
+          }, {
+            // Bundle: map, Component: EsriMapReference
+            // internal name
+            "name": "_esriMapReference",
+            // providing interface to identify service
+            "providing": "ct.mapping.map.EsriMapReference"
+        }]
+    },
+    // we register a new tool (don't forget to add implementing class "ct/tools/Tool" to module.js!
+    {
+        "name": "SwipeTool",
+        "impl": "ct/tools/Tool",
+        "provides": ["ct.tools.Tool"],
+        "propertiesConstructor": true,
+        "properties": {
+            "toolRole": "toolset",
+            // id of tool
+            "id": "swipeTool",
+            "title": "${tool}",
+            // icon class
+            "iconClass":"icon-extent",
+            // function that is called when tool is activated
+            "activateHandler": "showSwipeWidget",
+            // function that is called when tool is deactivated
+            "deactivateHandler": "hideSwipeWidget",
+            // mark tool as toggle tool
+            "togglable": true
+        },
+        "references" : [{
+            "name": "handlerScope",
+            // the handler scope is our swipe controller component defined above
+            "providing": "layerswipe.SwipeController"
+        }]
+    }]
+}
