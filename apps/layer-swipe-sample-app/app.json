@@ -1,27 +1,10 @@
 {
-    "properties": {
-        "description": "",
-        "modifiedAt": 1401261161091,
-        "createdBy": "dpa",
-        "thumbnailFile": "",
-        "templateFile": "swipe.zip",
-        "title": "Swipe Sample",
-        "modifiedBy": "dpa",
-        "optimized": true,
-        "createdAt": 1401260929930,
-        "editorState": "PUBLISHED",
-        "templateId": "14641A7912020C8",
-        "id": "swipe"
-    },
     "load": {
-        "bundleLocations": [
-            "bundles"
-        ],
+        "bundleLocations": ["localbundles", "bundles"],
         "allowedBundles": [
             "windowmanager",
             "map",
             "splashscreen",
-            "dataform",
             "basemaptoggler",
             "layerswipe",
             "system",
@@ -33,17 +16,9 @@
         ]
     },
     "bundles": {
-        "toolrules": {
-            "ToolActiveStateManager": {
-                "activateOnStartToolIds": [
-                    "swipeTool"
-                ]
-            }
-        },
-        "templates": {
-            "enabled": true,
-            "TemplateSelector": {
-                "componentEnabled": false
+        "basemaptoggler": {
+            "DropDownBasemapToggler": {
+                "showLabel": true
             }
         },
         "layerswipe": {
@@ -51,56 +26,7 @@
                 "swipeLayerWidgetOpts": {
                     "type": "vertical"
                 }
-            },
-            "enabled": true
-        },
-        "basemaptoggler": {
-            "enabled": true,
-            "DropDownBasemapToggler": {
-                "showLabel": true
             }
-        },
-        "toolset": {
-         "ToolsetManager": {
-            "toolsets": [
-               {
-                  "id": "default_tools",
-                  "title": "Tools",
-                  "tools": [
-                     "swipeTool"
-                  ],
-                  "container": "map",
-                  "position": {
-                     "rel_t": 50,
-                     "rel_l": 50
-                  }
-               }
-            ]
-         }
-      },
-        "dataform": {
-            "enabled": true
-        },
-        "themes": {
-            "ThemeSelector": {
-                "componentEnabled": false
-            },
-            "enabled": true,
-            "ThemeModel": {
-                "_selectedTheme": "everlasting",
-                "_themes": [
-                    {
-                        "name": "everlasting",
-                        "title": "Everlasting"
-                    }
-                ]
-            }
-        },
-        "wizard": {
-            "enabled": true
-        },
-        "templatelayout": {
-            "enabled": true
         },
         "map": {
             "MappingResourceRegistryFactory": {
@@ -124,7 +50,6 @@
                     ]
                 }
             },
-            "enabled": true,
             "MapState": {
                 "initialExtent": {
                     "xmin": 835578.8249383433,
@@ -170,11 +95,40 @@
                 }
             }
         },
-        "windowmanager": {
-            "enabled": true
+        "templates": {
+            "TemplateSelector": {
+                "componentEnabled": false
+            }
         },
-        "splashscreen": {
-            "enabled": true
+        "themes": {
+            "ThemeSelector": {
+                "componentEnabled": false
+            }
+        },
+        "toolrules": {
+            "ToolActiveStateManager": {
+                "activateOnStartToolIds": [
+                    "swipeTool"
+                ]
+            }
+        },
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": [
+                    {
+                        "id": "default_tools",
+                        "title": "Tools",
+                        "tools": [
+                            "swipeTool"
+                        ],
+                        "container": "map",
+                        "position": {
+                            "rel_t": 50,
+                            "rel_l": 50
+                        }
+                    }
+                ]
+            }
         }
     }
 }
