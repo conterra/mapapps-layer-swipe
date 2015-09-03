@@ -10,6 +10,7 @@
     "Bundle-Description": "${bundleDescription}",
     // vendor information for this bundle
     "Bundle-Vendor": "con terra GmbH",
+    "Product-Name": "map.apps Developer Network",
     // disable loading of main.js file (only required if i18n is used)
     "Bundle-Main": "",
     // define bundle dependencies, here: map bundle, version 3.0.0 and above
