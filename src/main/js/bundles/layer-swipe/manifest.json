@@ -3,7 +3,7 @@
     // internal name of the bundle
     "Bundle-SymbolicName": "layerswipe",
     // version of this bundle
-    "Bundle-Version": "1.0.1",
+    "Bundle-Version": "1.0.2-SNAPSHOT",
     // "human-readable" name of the bundle
     "Bundle-Name": "${bundleName}",
     // description of the bundle
@@ -21,11 +21,11 @@
 
     // Announce the config bundle
     "Config-Bundle-Location": "/config",
-    
-     "CSS-Themes-Extension": [{
+
+    /*"CSS-Themes-Extension": [{
         "name": "*",
         "files": ["./themes/winter/layerSwipe.css"]
-    }],
+    }],*/
     
     // list of components provided by this bundle
     "Components": [{
