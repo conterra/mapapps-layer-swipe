@@ -5,17 +5,17 @@
             "localbundles"
         ],
         "allowedBundles": [
-            "windowmanager",
-            "map",
-            "splashscreen",
-            "basemaptoggler",
-            "layerswipe",
-            "system",
-            "templatelayout",
-            "templates",
-            "themes",
-            "toolset",
-            "toolrules"
+            "windowmanager@^3.2.1",
+            "map@^3.2.1",
+            "splashscreen@^3.2.1",
+            "basemaptoggler@^3.2.1",
+            "system@^3.2.1",
+            "templatelayout@^3.2.1",
+            "templates@^3.2.1",
+            "themes@^3.2.1",
+            "toolset@^3.2.1",
+            "toolrules@^3.2.1",
+            "layerswipe"
         ]
     },
     "bundles": {
