@@ -25,11 +25,12 @@ define([
     // required amd modules
     "dojo/_base/declare",
     "dojo/query",
+    "dojo/window",
     "dojo/dom-construct",
     "esri/dijit/LayerSwipe",
     "ct/_Connect"
 
-], function (declare, d_query, d_construct, LayerSwipe, _Connect) {
+], function (declare, d_query, d_window, d_construct, LayerSwipe, _Connect) {
 
     return declare([_Connect], {
         /**
@@ -75,6 +76,25 @@ define([
             opts.layers = [esriLayer];
             //add Esri map object to widget options
             opts.map = esriMap;
+
+            // get viewsize
+            var vs = d_window.getBox();
+
+            if (opts.left) {
+                if (typeof(opts.left) == "string" && opts.left.includes("%")) {
+                    var ratioWidth = parseFloat(opts.left.replace("%", "")) / 100;
+                    var width = vs.w;
+                    opts.left = width * ratioWidth;
+                }
+            }
+            if (opts.top) {
+                if (typeof(opts.top) == "string" && opts.top.includes("%")) {
+                    var ratioHeight = parseFloat(opts.top.replace("%", "")) / 100;
+                    var height = vs.h;
+                    opts.top = height * ratioHeight;
+                }
+            }
+
             // create LayerSwipe widget and store it in local and member
             // variable for later use
             this.swipeWidget = new LayerSwipe(opts, "swipeDiv");
@@ -85,7 +105,7 @@ define([
             // hide swipe widget initially
             this.swipeWidget.disable();
         },
-        
+
         /*
          * Function triggered when tool is activated
          */
@@ -93,7 +113,7 @@ define([
             // show swipe widget
             this.swipeWidget.enable();
         },
-        
+
         /*
          * Function triggered when tool is deactivated
          */
@@ -101,7 +121,7 @@ define([
             // hide swipe widget
             this.swipeWidget.disable();
         },
-        
+
         deactivate: function () {
             // Layer Swipe widget
             this.swipeWidget.destroy();

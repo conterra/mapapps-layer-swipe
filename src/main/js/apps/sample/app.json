@@ -1,137 +1,144 @@
 {
-    "load": {
-        "bundleLocations": [
-            "bundles",
-            "localbundles"
-        ],
-        "allowedBundles": [
-            "windowmanager@^3.2.1",
-            "map@^3.2.1",
-            "splashscreen@^3.2.1",
-            "basemaptoggler@^3.2.1",
-            "system@^3.2.1",
-            "templatelayout@^3.2.1",
-            "templates@^3.2.1",
-            "themes@^3.2.1",
-            "toolset@^3.2.1",
-            "toolrules@^3.2.1",
-            "layerswipe"
-        ]
+  "properties": {
+    "title": "Layer Swipe Sample",
+    "amdPackages": "apprt@^3.2.1"
+  },
+  "load": {
+    "bundleLocations": [
+      "bundles",
+      "localbundles"
+    ],
+    "allowedBundles": [
+      "windowmanager@^3.2.1",
+      "map@^3.2.1",
+      "splashscreen@^3.2.1",
+      "basemaptoggler@^3.2.1",
+      "system@^3.2.1",
+      "templatelayout@^3.2.1",
+      "templates@^3.2.1",
+      "themes@^3.2.1",
+      "toolset@^3.2.1",
+      "toolrules@^3.2.1",
+      "layerswipe"
+    ]
+  },
+  "bundles": {
+    "basemaptoggler": {
+      "DropDownBasemapToggler": {
+        "showLabel": true
+      }
     },
-    "bundles": {
-        "basemaptoggler": {
-            "DropDownBasemapToggler": {
-                "showLabel": true
-            }
-        },
-        "layerswipe": {
-            "SwipeController": {
-                "swipeLayerWidgetOpts": {
-                    "type": "vertical"
-                }
-            }
-        },
-        "map": {
-            "MappingResourceRegistryFactory": {
-                "_knownServices": {
-                    "services": [
-                        {
-                            "id": "worldimage",
-                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
-                            "type": "AGS_TILED"
-                        },
-                        {
-                            "id": "worldtopo",
-                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
-                            "type": "AGS_TILED"
-                        },
-                        {
-                            "id": "worldstreets",
-                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
-                            "type": "AGS_TILED"
-                        }
-                    ]
-                }
-            },
-            "MapState": {
-                "initialExtent": {
-                    "xmin": 835578.8249383433,
-                    "xmax": 863096.1551209696,
-                    "ymin": 6785983.136606157,
-                    "ymax": 6800334.188666679,
-                    "wkid": 3857
-                }
-            },
-            "MapModelFactory": {
-                "_configData": {
-                    "maps": [
-                        {
-                            "id": "default",
-                            "glass_pane": [],
-                            "operationalLayer": [
-                                {
-                                    "id": "swipeLayer",
-                                    "enabled": true,
-                                    "service": "worldimage"
-                                }
-                            ],
-                            "baseLayer": [
-                                {
-                                    "title": "World Streets",
-                                    "enabled": true,
-                                    "service": "worldstreets",
-                                    "layers": [
-                                        "*"
-                                    ]
-                                },
-                                {
-                                    "title": "World Topo",
-                                    "enabled": false,
-                                    "service": "worldtopo",
-                                    "layers": [
-                                        "*"
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        },
-        "templates": {
-            "TemplateSelector": {
-                "componentEnabled": false
-            }
-        },
-        "themes": {
-            "ThemeSelector": {
-                "componentEnabled": false
-            }
-        },
-        "toolrules": {
-            "ToolActiveStateManager": {
-                "activateOnStartToolIds": [
-                    "swipeTool"
-                ]
-            }
-        },
-        "toolset": {
-            "ToolsetManager": {
-                "toolsets": [
-                    {
-                        "id": "default_tools",
-                        "title": "Tools",
-                        "tools": [
-                            "swipeTool"
-                        ],
-                        "container": "map",
-                        "position": {
-                            "rel_t": 50,
-                            "rel_l": 50
-                        }
-                    }
-                ]
-            }
+    "layerswipe": {
+      "SwipeController": {
+        "swipeLayerWidgetOpts": {
+          "type": "vertical",
+          "left": "50%"
         }
+      }
+    },
+    "map": {
+      "MappingResourceRegistryFactory": {
+        "_knownServices": {
+          "services": [
+            {
+              "id": "worldimage",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+              "type": "AGS_TILED"
+            },
+            {
+              "id": "worldtopo",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+              "type": "AGS_TILED"
+            },
+            {
+              "id": "worldstreets",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+              "type": "AGS_TILED"
+            }
+          ]
+        }
+      },
+      "MapState": {
+        "initialExtent": {
+          "xmin": 835578.8249383433,
+          "xmax": 863096.1551209696,
+          "ymin": 6785983.136606157,
+          "ymax": 6800334.188666679,
+          "wkid": 3857
+        }
+      },
+      "MapModelFactory": {
+        "_configData": {
+          "maps": [
+            {
+              "id": "default",
+              "glass_pane": [],
+              "operationalLayer": [
+                {
+                  "id": "swipeLayer",
+                  "enabled": true,
+                  "service": "worldimage"
+                }
+              ],
+              "baseLayer": [
+                {
+                  "title": "World Streets",
+                  "enabled": true,
+                  "service": "worldstreets",
+                  "layers": [
+                    "*"
+                  ]
+                },
+                {
+                  "title": "World Topo",
+                  "enabled": false,
+                  "service": "worldtopo",
+                  "layers": [
+                    "*"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "templates": {
+      "TemplateSelector": {
+        "componentEnabled": false
+      }
+    },
+    "themes": {
+      "ThemeSelector": {
+        "componentEnabled": false
+      }
+    },
+    "toolrules": {
+      "ToolActiveStateManager": {
+        "activateOnStartToolIds": [
+          "swipeTool"
+        ]
+      }
+    },
+    "toolset": {
+      "ToolsetManager": {
+        "toolsets": [
+          {
+            "id": "default_tools",
+            "title": "Tools",
+            "tools": [
+              "swipeTool"
+            ],
+            "container": "map",
+            "position": {
+              "rel_t": 50,
+              "rel_l": 50
+            },
+            "cssClass": "notitle",
+            "windowType": "fixed"
+          }
+        ]
+      }
     }
+  }
 }
