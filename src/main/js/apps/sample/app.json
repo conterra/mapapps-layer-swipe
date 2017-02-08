@@ -19,10 +19,19 @@
       "themes@^3.2.1",
       "toolset@^3.2.1",
       "toolrules@^3.2.1",
+      "banner@^3.2.1",
       "layerswipe"
     ]
   },
   "bundles": {
+    "banner": {
+      "BannerWidget": {
+        "label": "Developer Network",
+        "image": "https://www.conterra.de/~/media/conterra/images/site_logos/conterra-logo.ashx",
+        "imagePosition": "above",
+        "link": "http://developernetwork.conterra.de"
+      }
+    },
     "basemaptoggler": {
       "DropDownBasemapToggler": {
         "showLabel": true
