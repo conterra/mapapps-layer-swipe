@@ -3,7 +3,7 @@
     // internal name of the bundle
     "Bundle-SymbolicName": "layerswipe",
     // version of this bundle
-    "Bundle-Version": "1.0.2-SNAPSHOT",
+    "Bundle-Version": "1.0.2",
     // "human-readable" name of the bundle
     "Bundle-Name": "${bundleName}",
     // description of the bundle
