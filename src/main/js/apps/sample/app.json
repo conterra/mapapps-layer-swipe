@@ -24,6 +24,15 @@
     ]
   },
   "bundles": {
+    "layerswipe": {
+      "SwipeController": {
+        "mapModelNodeId": "swipeLayer",
+        "swipeLayerWidgetOpts": {
+          "type": "vertical",
+          "left": "50%"
+        }
+      }
+    },
     "banner": {
       "BannerWidget": {
         "label": "Developer Network",
@@ -35,14 +44,6 @@
     "basemaptoggler": {
       "DropDownBasemapToggler": {
         "showLabel": true
-      }
-    },
-    "layerswipe": {
-      "SwipeController": {
-        "swipeLayerWidgetOpts": {
-          "type": "vertical",
-          "left": "50%"
-        }
       }
     },
     "map": {
