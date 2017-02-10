@@ -172,7 +172,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.10</version>
+                    <version>1.9.5</version>
                 </plugin>
                  <plugin>
                     <artifactId>maven-release-plugin</artifactId>
