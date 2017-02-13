@@ -88,7 +88,7 @@ define([
                 }
             }
             if (opts.top) {
-                if (typeof(opts.top) == "string" && opts.left.indexOf("%") !== -1) {
+                if (typeof(opts.top) == "string" && opts.top.indexOf("%") !== -1) {
                     var ratioHeight = parseFloat(opts.top.replace("%", "")) / 100;
                     var height = vs.h;
                     opts.top = height * ratioHeight;
