@@ -81,14 +81,14 @@ define([
             var vs = d_window.getBox();
 
             if (opts.left) {
-                if (typeof(opts.left) == "string" && opts.left.indexOf("%")) {
+                if (typeof(opts.left) == "string" && opts.left.indexOf("%") !== -1) {
                     var ratioWidth = parseFloat(opts.left.replace("%", "")) / 100;
                     var width = vs.w;
                     opts.left = width * ratioWidth;
                 }
             }
             if (opts.top) {
-                if (typeof(opts.top) == "string" && opts.top.indexOf("%")) {
+                if (typeof(opts.top) == "string" && opts.left.indexOf("%") !== -1) {
                     var ratioHeight = parseFloat(opts.top.replace("%", "")) / 100;
                     var height = vs.h;
                     opts.top = height * ratioHeight;
