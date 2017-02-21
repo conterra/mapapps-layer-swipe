@@ -25,12 +25,10 @@ define([
     // required amd modules
     "dojo/_base/declare",
     "dojo/query",
-    "dojo/window",
     "dojo/dom-construct",
     "esri/dijit/LayerSwipe",
     "ct/_Connect"
-
-], function (declare, d_query, d_window, d_construct, LayerSwipe, _Connect) {
+], function (declare, d_query, d_construct, LayerSwipe, _Connect) {
 
     return declare([_Connect], {
         /**
@@ -78,20 +76,18 @@ define([
             opts.map = esriMap;
 
             // get viewsize
-            var vs = d_window.getBox();
+            var vs = this._mapState.getSize();
 
             if (opts.left) {
                 if (typeof(opts.left) == "string" && opts.left.indexOf("%") !== -1) {
                     var ratioWidth = parseFloat(opts.left.replace("%", "")) / 100;
-                    var width = vs.w;
-                    opts.left = width * ratioWidth;
+                    opts.left = vs.width * ratioWidth;
                 }
             }
             if (opts.top) {
                 if (typeof(opts.top) == "string" && opts.top.indexOf("%") !== -1) {
                     var ratioHeight = parseFloat(opts.top.replace("%", "")) / 100;
-                    var height = vs.h;
-                    opts.top = height * ratioHeight;
+                    opts.top = vs.height * ratioHeight;
                 }
             }
 
