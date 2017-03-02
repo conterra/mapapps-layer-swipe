@@ -20,11 +20,11 @@
       "toolset@^3.2.1",
       "toolrules@^3.2.1",
       "banner@^3.2.1",
-      "layerswipe"
+      "dn_layerswipe"
     ]
   },
   "bundles": {
-    "layerswipe": {
+    "dn_layerswipe": {
       "SwipeController": {
         "mapModelNodeId": "swipeLayer",
         "swipeLayerWidgetOpts": {
