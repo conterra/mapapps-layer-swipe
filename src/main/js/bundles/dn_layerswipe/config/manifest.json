@@ -1,7 +1,7 @@
 {
     // internal name of the bundle (take name of parent bundle and append "-config")
     "Bundle-SymbolicName": "layerswipe-config",
-    "Bundle-Version": "1.0",
+    "Bundle-Version": "1.0.5-SNAPSHOT",
 
     "Bundle-Name": "Layer Swipe config",
     "Bundle-Description": "Configuration bundle for Layer Swipe",
