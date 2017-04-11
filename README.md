@@ -19,9 +19,9 @@ Before you can run the project you have to define the mapapps.remote.base proper
 Change the mapapps.remote.base in the build.properties file and run:
 `mvn install -Denv=dev -Dlocal.configfile=%ABSOLUTEPATHTOPROJECTROOT%/build.properties`
 
-####Configurable Components of dn_querybuilder:
+#### Configurable Components of dn_querybuilder:
 
-#####SwipeController:
+##### SwipeController:
 ```
 "SwipeController": {
   "mapModelNodeId" : "swipeLayer",
