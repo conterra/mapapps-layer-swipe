@@ -20,6 +20,7 @@
       "toolset@^3.2.1",
       "toolrules@^3.2.1",
       "banner@^3.2.1",
+      "custominfo@^3.2.1",
       "dn_layerswipe"
     ]
   },
@@ -40,6 +41,36 @@
         "imagePosition": "above",
         "link": "http://developernetwork.conterra.de"
       }
+    },
+    "custominfo": {
+      "CustomInfoToggleTool": [
+        {
+          "id": "customInfoTool",
+          "activateOnStartup": true,
+          "title": "Information",
+          "tooltip": "Information",
+          "iconClass": "icon-custom-info-info",
+          "toolClass": "ctInfo",
+          "togglable": true,
+          "widgetSettings": {
+            "content": "This app shows the functionality of the Layer Swipe bundle which allows you to easily compare the content of two different layers in a map using the LayerSwipe widget of the Esri ArcGIS API for JavaScript. In the configuration you can choose between horizontal, vertical and scope viewing modes.<br><br> Please drag the bar in the middle to the left or right to see the functionality.",
+            "window": {
+              "title": "Information",
+              "marginBox": {
+                "w": 300,
+                "h": 170,
+                "l": 25,
+                "b": 70
+              },
+              "draggable": true,
+              "closable": true,
+              "modal": false,
+              "maximizable": false,
+              "resizable": false
+            }
+          }
+        }
+      ]
     },
     "basemaptoggler": {
       "DropDownBasemapToggler": {
