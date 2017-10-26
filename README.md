@@ -7,6 +7,8 @@ Sample App
 ------------------
 http://www.mapapps.de/mapapps/resources/apps/downloads_layer_swipe/index.html
 
+![Screenshot Layer Swipe Sample](https://github.com/conterra/mapapps-layer-swipe/blob/master/LayerSwipe.JPG)
+
 #### Configurable Components of dn_querybuilder:
 
 ##### SwipeController:
