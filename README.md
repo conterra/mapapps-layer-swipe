@@ -5,7 +5,7 @@ In order to use the bundle "out-of-the-box" the sample app already provides two 
 
 Sample App
 ------------------
-http://www.mapapps.de/mapapps/resources/apps/downloads_layer_swipe/index.html
+https://demos.conterra.de/mapapps/resources/apps/downloads_layer_swipe/index.html
 
 ![Screenshot Layer Swipe Sample](https://github.com/conterra/mapapps-layer-swipe/blob/master/LayerSwipe.JPG)
 
