@@ -9,7 +9,7 @@ https://demos.conterra.de/mapapps/resources/apps/downloads_layer_swipe/index.htm
 
 ![Screenshot Layer Swipe Sample](https://github.com/conterra/mapapps-layer-swipe/blob/master/LayerSwipe.JPG)
 
-#### Configurable Components of dn_querybuilder:
+#### Configurable Components of dn_layerswipe:
 
 ##### SwipeController:
 ```
