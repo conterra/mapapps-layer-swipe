@@ -1,185 +1,138 @@
 {
-  "properties": {
-    "title": "Layer Swipe Sample",
-    "amdPackages": "apprt@^3.2.1"
-  },
-  "load": {
-    "bundleLocations": [
-      "bundles",
-      "localbundles"
-    ],
-    "allowedBundles": [
-      "windowmanager@^3.2.1",
-      "map@^3.2.1",
-      "splashscreen@^3.2.1",
-      "basemaptoggler@^3.2.1",
-      "system@^3.2.1",
-      "templatelayout@^3.2.1",
-      "templates@^3.2.1",
-      "themes@^3.2.1",
-      "toolset@^3.2.1",
-      "toolrules@^3.2.1",
-      "banner@^3.2.1",
-      "custominfo@^3.2.1",
-      "dn_layerswipe"
-    ]
-  },
-  "bundles": {
-    "dn_layerswipe": {
-      "SwipeController": {
-        "mapModelNodeId": "swipeLayer",
-        "swipeLayerWidgetOpts": {
-          "type": "vertical",
-          "left": "50%"
-        }
-      }
+    "properties": {
+        "title": "Swipe Sample"
     },
-    "banner": {
-      "BannerWidget": {
-        "label": "Developer Network",
-        "image": "https://www.conterra.de/~/media/conterra/images/site_logos/conterra-logo.ashx",
-        "imagePosition": "above",
-        "link": "http://developernetwork.conterra.de"
-      }
+    "load": {
+        "bundleLocations": [
+            "localbundles",
+            "bundles"
+        ],
+        "allowedBundles": [
+            "system",
+            "splashscreen",
+            "templatelayout",
+            "template-seasons",
+            "theme-everlasting",
+            "toolset",
+            "toolrules",
+            "map-init",
+            "map-preload-2D",
+            "map-preload-3D",
+            "mapnavigation",
+            "banner",
+            "console",
+            "dn_layerswipe"
+        ]
     },
-    "custominfo": {
-      "CustomInfoToggleTool": [
-        {
-          "id": "customInfoTool",
-          "activateOnStartup": true,
-          "title": "Information",
-          "tooltip": "Information",
-          "iconClass": "icon-custom-info-info",
-          "toolClass": "ctInfo",
-          "togglable": true,
-          "widgetSettings": {
-            "content": "This app shows the functionality of the Layer Swipe bundle which allows you to easily compare the content of two different layers in a map using the LayerSwipe widget of the Esri ArcGIS API for JavaScript. In the configuration you can choose between horizontal, vertical and scope viewing modes.<br><br> Please drag the bar in the middle to the left or right to see the functionality.",
-            "window": {
-              "title": "Information",
-              "marginBox": {
-                "w": 300,
-                "h": 170,
-                "l": 25,
-                "b": 70
-              },
-              "draggable": true,
-              "closable": true,
-              "modal": false,
-              "maximizable": false,
-              "resizable": false
+    "bundles": {
+        "dn_layerswipe": {
+            "Config": {
+                "leadingLayerIds": [
+                    "infrared"
+                ],
+                "trailingLayerIds": [
+                    "nearInfrared"
+                ],
+                "direction": "horizontal",
+                "position": 50
             }
-          }
-        }
-      ]
-    },
-    "basemaptoggler": {
-      "DropDownBasemapToggler": {
-        "showLabel": true
-      }
-    },
-    "map": {
-      "MappingResourceRegistryFactory": {
-        "_knownServices": {
-          "services": [
-            {
-              "id": "worldimage",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
-              "type": "AGS_TILED"
-            },
-            {
-              "id": "worldtopo",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
-              "type": "AGS_TILED"
-            },
-            {
-              "id": "worldstreets",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
-              "type": "AGS_TILED"
+        },
+        "banner": {
+            "BannerWidget": {
+                "label": "Developer Network",
+                "image": "resource('${app}:/images/logo_conterra.png')",
+                "imageWidth": 200,
+                "imagePosition": "above",
+                "link": "http://developernetwork.conterra.de"
             }
-          ]
-        }
-      },
-      "MapState": {
-        "initialExtent": {
-          "xmin": 835578.8249383433,
-          "xmax": 863096.1551209696,
-          "ymin": 6785983.136606157,
-          "ymax": 6800334.188666679,
-          "wkid": 3857
-        }
-      },
-      "MapModelFactory": {
-        "_configData": {
-          "maps": [
-            {
-              "id": "default",
-              "glass_pane": [],
-              "operationalLayer": [
-                {
-                  "id": "swipeLayer",
-                  "enabled": true,
-                  "service": "worldimage"
-                }
-              ],
-              "baseLayer": [
-                {
-                  "title": "World Streets",
-                  "enabled": true,
-                  "service": "worldstreets",
-                  "layers": [
-                    "*"
-                  ]
+        },
+        "map-init": {
+            "Config": {
+                "map": {
+                    "basemap": "streets",
+                    "layers": [
+                        {
+                            "id": "infrared",
+                            "url": "https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/WV03_Kilauea_20180519_ShortwaveInfrared/MapServer",
+                            "type": "AGS_TILED"
+                        },
+                        {
+                            "id": "nearInfrared",
+                            "url": "https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/WV03_Kilauea_20180519_NearInfrared/MapServer",
+                            "type": "AGS_TILED"
+                        }
+                    ]
                 },
-                {
-                  "title": "World Topo",
-                  "enabled": false,
-                  "service": "worldtopo",
-                  "layers": [
-                    "*"
-                  ]
+                "view": {
+                    "viewmode": "2D",
+                    "zoom": 14,
+                    "center": [
+                        -154.88,
+                        19.46
+                    ],
+                    "spatialReference": 3857
                 }
-              ]
             }
-          ]
+        },
+        "templates": {
+            "TemplateModel": {
+                "_templates": [
+                    {
+                        "name": "seasons",
+                        "widgets": [
+                            {
+                                "widgetRole": "drawer_button",
+                                "attachTo": "map_topleft",
+                                "props": {
+                                    "layoutIndex": 0
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": [
+                    {
+                        "id": "mapview_tools",
+                        "tools": [
+                            "locateMeTool",
+                            "zoomInTool",
+                            "zoomOutTool",
+                            "compassTool",
+                            "restoreInitialViewTool"
+                        ],
+                        "registerWidget": {
+                            "widgetRole": "mapview_tools"
+                        },
+                        "container": "ignore",
+                        "windowType": "container",
+                        "cssClass": "muted"
+                    },
+                    {
+                        "id": "drawer_left",
+                        "title": "Werkzeuge",
+                        "cssClass": "ct-main-app-menu",
+                        "tools": [
+                            "swipeToggleTool"
+                        ],
+                        "registerWidget": {
+                            "widgetRole": "drawer_button"
+                        },
+                        "container": "ignore",
+                        "windowType": "drawer_left"
+                    }
+                ]
+            }
+        },
+        "toolrules": {
+            "ToolActiveStateManager": {
+                "activateOnStartToolIds": [
+                    "swipeToggleTool"
+                ]
+            }
         }
-      }
-    },
-    "templates": {
-      "TemplateSelector": {
-        "componentEnabled": false
-      }
-    },
-    "themes": {
-      "ThemeSelector": {
-        "componentEnabled": false
-      }
-    },
-    "toolrules": {
-      "ToolActiveStateManager": {
-        "activateOnStartToolIds": [
-          "swipeTool"
-        ]
-      }
-    },
-    "toolset": {
-      "ToolsetManager": {
-        "toolsets": [
-          {
-            "id": "default_tools",
-            "title": "Tools",
-            "tools": [
-              "swipeTool"
-            ],
-            "container": "map",
-            "position": {
-              "rel_t": 50,
-              "rel_l": 50
-            },
-            "cssClass": "notitle",
-            "windowType": "fixed"
-          }
-        ]
-      }
     }
-  }
 }

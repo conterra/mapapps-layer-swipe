@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 con terra GmbH (info@conterra.de)
+ * Copyright (C) 2019 con terra GmbH (info@conterra.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define({
-    root: {
+module.exports = {
+    root: ({
         bundleName: "Layer Swipe",
-        bundleDescription: "This bundles shows how to use the Esri Layer Swipe widget.",
-        tool: "Swipe Tool"
-    },
+        bundleDescription: "This bundles adds the Esri Swipe Widget to the app.",
+        tool: {
+            title: "Swipe Tool",
+            tooltip: "Swipe Tool"
+        }
+    }),
     "de": true
-});
+};
