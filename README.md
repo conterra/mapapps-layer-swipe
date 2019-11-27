@@ -7,7 +7,7 @@ Sample App
 ------------------
 https://demos.conterra.de/mapapps/resources/apps/downloads_layer_swipe/index.html
 
-![Screenshot Layer Swipe Sample](https://github.com/conterra/mapapps-layer-swipe/blob/master/LayerSwipe.JPG)
+![Screenshot Layer Swipe Sample](https://github.com/conterra/mapapps-layer-swipe/blob/3.x/LayerSwipe.JPG)
 
 #### Configurable Components of dn_layerswipe:
 
