@@ -7,7 +7,7 @@ The Layer Swipe bundle allows you to easily compare the content of two different
 https://demos.conterra.de/mapapps/resources/apps/downloads_layer_swipe4/index.html
 
 ## Installation Guide
-**Requirement: map.apps 4.3.0**
+**Requirement: map.apps 4.8.0**
 
 [dn_layerlist Documentation](https://github.com/conterra/mapapps-layer-list/tree/master/src/main/js/bundles/dn_layerlist)
 
