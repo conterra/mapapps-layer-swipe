@@ -16,6 +16,7 @@
 import Swipe from "esri/widgets/Swipe";
 
 const _swipeWidget = Symbol("_swipeWidget");
+const _viewModeWatcher = Symbol("_viewModeWatcher");
 
 export default class LayerListWidgetFactory {
 
@@ -24,7 +25,7 @@ export default class LayerListWidgetFactory {
     }
 
     showWidget() {
-        const view = this._mapWidgetModel.get("view");
+        const view = this._getView();
         const properties = this._properties;
 
         const leadingLayers = this._getLayers(properties.leadingLayerIds);
@@ -41,6 +42,12 @@ export default class LayerListWidgetFactory {
             swipeWidget.set("view", view);
             view.ui.add(swipeWidget);
         }));
+
+        this[_viewModeWatcher] = this._mapWidgetModel.watch("viewmode", ({value: viewmode}) => {
+            if (viewmode === "3D") {
+                this._tool.set("active", false);
+            }
+        });
     }
 
     hideWidget() {
@@ -49,6 +56,8 @@ export default class LayerListWidgetFactory {
         });
         this[_swipeWidget].destroy();
         this[_swipeWidget] = null;
+        this[_viewModeWatcher].remove();
+        this[_viewModeWatcher] = null;
     }
 
     _getLayers(ids) {

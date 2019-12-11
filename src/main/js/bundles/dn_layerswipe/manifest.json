@@ -32,6 +32,12 @@
                 {
                     "name": "_mapWidgetModel",
                     "providing": "map-widget.MapWidgetModel"
+                },
+                {
+                    "name": "_tool",
+                    "providing": "ct.tools.Tool",
+                    "filter": "(id=swipeToggleTool)",
+                    "cardinality": "0..1"
                 }
             ]
         },
@@ -51,7 +57,11 @@
                 "togglable": true,
                 "activateHandler": "showWidget",
                 "deactivateHandler": "hideWidget",
-                "noGroup": true
+                "noGroup": true,
+                "rules": {
+                    "viewmode": "2D",
+                    "ruleSuccessProperty": "visibility"
+                }
             },
             "references": [
                 {
