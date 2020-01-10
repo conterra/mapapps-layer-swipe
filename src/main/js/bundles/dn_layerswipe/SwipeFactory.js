@@ -25,7 +25,6 @@ export default class LayerListWidgetFactory {
     }
 
     showWidget() {
-        const view = this._getView();
         const properties = this._properties;
 
         const leadingLayers = this._getLayers(properties.leadingLayerIds);
@@ -35,8 +34,7 @@ export default class LayerListWidgetFactory {
             leadingLayers: leadingLayers,
             trailingLayers: trailingLayers,
             position: properties.position,
-            direction: properties.direction,
-            view: view
+            direction: properties.direction
         });
         swipeWidget.own(this._getView().then((view) => {
             swipeWidget.set("view", view);
