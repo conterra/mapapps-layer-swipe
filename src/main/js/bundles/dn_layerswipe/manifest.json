@@ -15,6 +15,14 @@
         "map-widget": "^4.8.0-SNAPSHOT"
     },
     "startLevel": 50,
+    "CSS-Themes-Extension": [
+        {
+            "name": "*",
+            "files": [
+                "./css/styles.css"
+            ]
+        }
+    ],
     "components": [
         {
             "name": "Config",
