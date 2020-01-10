@@ -9,7 +9,7 @@ https://demos.conterra.de/mapapps/resources/apps/downloads_layer_swipe4/index.ht
 ## Installation Guide
 **Requirement: map.apps 4.8.0**
 
-[dn_layerlist Documentation](https://github.com/conterra/mapapps-layer-swipe/tree/master/src/main/js/bundles/dn_layerswipe)
+[dn_layerswipe Documentation](https://github.com/conterra/mapapps-layer-swipe/tree/master/src/main/js/bundles/dn_layerswipe)
 
 ## Development Guide
 ### Define the mapapps remote base
