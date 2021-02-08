@@ -51,11 +51,11 @@ export default class LayerListWidgetFactory {
     hideWidget() {
         this._getView().then((view) => {
             view.ui.remove(this[_swipeWidget]);
+            this[_swipeWidget]?.destroy();
+            this[_swipeWidget] = null;
+            this[_viewModeWatcher]?.remove();
+            this[_viewModeWatcher] = null;
         });
-        this[_swipeWidget].destroy();
-        this[_swipeWidget] = null;
-        this[_viewModeWatcher].remove();
-        this[_viewModeWatcher] = null;
     }
 
     _getLayers(ids) {
@@ -77,5 +77,4 @@ export default class LayerListWidgetFactory {
             }
         });
     }
-
 }
