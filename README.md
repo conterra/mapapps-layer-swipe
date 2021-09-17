@@ -3,12 +3,6 @@ The Layer Swipe bundle allows you to easily compare the content of two different
 
 In order to use the bundle "out-of-the-box" the sample app already provides two layers which will be used by the bundle. If you want to use your own layers please make sure to enter the map model node in the configuration of the bundle (Live Configuration -> Widgets -> Layer Swipe).
 
-Sample App
-------------------
-https://demos.conterra.de/mapapps/resources/apps/downloads_layer_swipe/index.html
-
-![Screenshot Layer Swipe Sample](https://github.com/conterra/mapapps-layer-swipe/blob/3.x/LayerSwipe.JPG)
-
 #### Configurable Components of dn_layerswipe:
 
 ##### SwipeController:
