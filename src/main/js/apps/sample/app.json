@@ -49,7 +49,7 @@
         "map-init": {
             "Config": {
                 "map": {
-                    "basemap": "streets",
+                    "basemap": "streets-vector",
                     "layers": [
                         {
                             "id": "infrared",
