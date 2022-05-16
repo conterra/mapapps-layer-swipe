@@ -6,9 +6,7 @@
     "vendor": "con terra GmbH",
     "productName": "devnet-mapapps-layer-swipe",
     "layer": "module",
-    "i18n": [
-        "bundle"
-    ],
+    "i18n": ["bundle"],
     "dependencies": {
         "esri": "^4.13.0",
         "esri-widgets": "^4.8.0",
@@ -18,18 +16,14 @@
     "CSS-Themes-Extension": [
         {
             "name": "*",
-            "files": [
-                "./css/styles.css"
-            ]
+            "files": ["./css/styles.css"]
         }
     ],
     "components": [
         {
             "name": "Config",
             "impl": "./SwipeFactory",
-            "provides": [
-                "dn_layerswipe/SwipeFactory"
-            ],
+            "provides": ["dn_layerswipe/SwipeFactory"],
             "properties": {
                 "leadingLayerIds": [],
                 "trailingLayerIds": [],
@@ -52,9 +46,7 @@
         {
             "name": "SwipeToggleTool",
             "impl": "ct/tools/Tool",
-            "provides": [
-                "ct.tools.Tool"
-            ],
+            "provides": ["ct.tools.Tool"],
             "propertiesConstructor": true,
             "properties": {
                 "id": "swipeToggleTool",

@@ -3,36 +3,28 @@
         "title": "Swipe Sample"
     },
     "load": {
-        "bundleLocations": [
-            "localbundles",
-            "bundles"
-        ],
+        "bundleLocations": ["localbundles", "bundles"],
         "allowedBundles": [
             "system",
             "splashscreen",
             "templatelayout",
             "template-seasons",
+            "theme-autumn",
             "theme-everlasting",
             "toolset",
             "toolrules",
             "map-init",
             "map-preload-2D",
-            "map-preload-3D",
             "mapnavigation",
             "banner",
-            "console",
             "dn_layerswipe"
         ]
     },
     "bundles": {
         "dn_layerswipe": {
             "Config": {
-                "leadingLayerIds": [
-                    "infrared"
-                ],
-                "trailingLayerIds": [
-                    "nearInfrared"
-                ],
+                "leadingLayerIds": ["infrared"],
+                "trailingLayerIds": ["nearInfrared"],
                 "direction": "horizontal",
                 "position": 50
             }
@@ -65,31 +57,18 @@
                 },
                 "view": {
                     "viewmode": "2D",
-                    "zoom": 14,
-                    "center": [
-                        -154.88,
-                        19.46
-                    ],
+                    "zoom": 13,
+                    "center": [-154.88, 19.46],
                     "spatialReference": 3857
                 }
             }
         },
-        "templates": {
-            "TemplateModel": {
-                "_templates": [
-                    {
-                        "name": "seasons",
-                        "widgets": [
-                            {
-                                "widgetRole": "drawer_button",
-                                "attachTo": "map_topleft",
-                                "props": {
-                                    "layoutIndex": 0
-                                }
-                            }
-                        ]
-                    }
-                ]
+        "themes": {
+            "ThemeModel": {
+                "_selectedTheme": "autumn"
+            },
+            "ThemeSelector": {
+                "componentEnabled": true
             }
         },
         "toolset": {
@@ -115,9 +94,7 @@
                         "id": "drawer_left",
                         "title": "Werkzeuge",
                         "cssClass": "ct-main-app-menu",
-                        "tools": [
-                            "swipeToggleTool"
-                        ],
+                        "tools": ["swipeToggleTool"],
                         "registerWidget": {
                             "widgetRole": "drawer_button"
                         },
@@ -129,9 +106,7 @@
         },
         "toolrules": {
             "ToolActiveStateManager": {
-                "activateOnStartToolIds": [
-                    "swipeToggleTool"
-                ]
+                "activateOnStartToolIds": ["swipeToggleTool"]
             }
         }
     }

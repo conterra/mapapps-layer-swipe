@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 con terra GmbH (info@conterra.de)
+ * Copyright (C) 2022 con terra GmbH (info@conterra.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import Swipe from "esri/widgets/Swipe";
 
 const _swipeWidget = Symbol("_swipeWidget");
@@ -60,14 +61,12 @@ export default class LayerListWidgetFactory {
 
     _getLayers(ids) {
         const map = this._mapWidgetModel.get("map");
-        return ids.map((id) => {
-            return map.findLayerById(id);
-        });
+        return ids.map((id) => map.findLayerById(id));
     }
 
     _getView() {
         const mapWidgetModel = this._mapWidgetModel;
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             if (mapWidgetModel.view) {
                 resolve(mapWidgetModel.view);
             } else {
