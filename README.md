@@ -4,7 +4,7 @@ The Layer Swipe bundle allows you to easily compare the content of two different
 ![Screenshot Layer Swipe Sample](https://github.com/conterra/mapapps-layer-swipe/blob/main/screenshot.JPG)
 
 ## Sample App
-https://demos.conterra.de/mapapps/resources/apps/downloads_layer_swipe4/index.html
+https://demos.conterra.de/mapapps/resources/apps/public_demo_layerswipe/index.htm
 
 ## Installation Guide
 **Requirement: map.apps 4.8.0**
