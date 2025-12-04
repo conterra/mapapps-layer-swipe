@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Swipe from "esri/widgets/Swipe";
+import Swipe from "@arcgis/core/widgets/Swipe";
 
 const _swipeWidget = Symbol("_swipeWidget");
 const _viewModeWatcher = Symbol("_viewModeWatcher");
