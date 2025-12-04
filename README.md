@@ -1,3 +1,6 @@
+[![devnet-bundle-snapshot](https://github.com/conterra/mapapps-layer-swipe/actions/workflows/devnet-bundle-snapshot.yml/badge.svg)](https://github.com/conterra/mapapps-layer-swipe/actions/workflows/devnet-bundle-snapshot.yml)
+![Static Badge](https://img.shields.io/badge/requires_map.apps-4.20.0-e5e5e5?labelColor=%233E464F&logoColor=%23e5e5e5)
+![Static Badge](https://img.shields.io/badge/tested_for_map.apps-4.20.0-%20?labelColor=%233E464F&color=%232FC050)
 # Layer Swipe Bundle
 The Layer Swipe bundle allows you to easily compare the content of two different layers in a map using the LayerSwipe widget of the Esri ArcGIS API for JavaScript. In the configuration you can choose between horizontal, vertical and scope viewing modes.
 
@@ -5,9 +8,6 @@ The Layer Swipe bundle allows you to easily compare the content of two different
 
 ## Sample App
 https://demos.conterra.de/mapapps/resources/apps/public_demo_layerswipe/index.htm
-
-## Installation Guide
-**Requirement: map.apps 4.8.0**
 
 [dn_layerswipe Documentation](https://github.com/conterra/mapapps-layer-swipe/tree/main/src/main/js/bundles/dn_layerswipe)
 
